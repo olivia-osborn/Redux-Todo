@@ -1,9 +1,19 @@
 import React from "react";
+import Todo from "./Todo";
 
-function TodoContainer() {
+function TodoContainer(props) {
     return (
-        <div></div>
+        <div>
+            {props.todoList.map(todoItem => {
+                return <Todo todoItem={todoItem}/>
+            })}
+        </div>
     )
 }
 
+const mapStateToProps = (state) => {
+    return {
+        todoList: state.todoList
+    }
+}
 export default TodoContainer;
