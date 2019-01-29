@@ -32,7 +32,8 @@ class TodoContainer extends React.Component {
                         return <Todo 
                             key={index} 
                             todoItem={todoItem} 
-                            onClick={e => this.toggleCompleted(e, index)}
+                            index={index}
+                            toggleCompleted={this.toggleCompleted}
                         />
                     })}
                     <form onSubmit={this.addTodo}>
