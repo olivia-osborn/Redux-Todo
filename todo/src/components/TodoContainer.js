@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Todo from "./Todo";
 import { connect } from "react-redux";
 
-import { addNewTodo, toggleCompletedTask } from "../actions/index";
+import { addNewTodo, toggleCompletedTask, deleteTodo } from "../actions/index";
 
 const StyledForm = styled.form`
     display: flex;
@@ -57,6 +57,12 @@ class TodoContainer extends React.Component {
         this.props.toggleCompletedTask(idx)
     }
 
+    deleteTodo = (e, idx) => {
+        e.preventDefault();
+        console.log("delete!")
+        this.props.deleteTodo(idx)
+    }
+
     render() {
         return (
             <>
@@ -67,6 +73,7 @@ class TodoContainer extends React.Component {
                             todoItem={todoItem} 
                             index={index}
                             toggleCompleted={this.toggleCompleted}
+                            deleteTodo={this.deleteTodo}
                         />
                     })}
                     <StyledForm onSubmit={this.addTodo}>
@@ -89,5 +96,5 @@ const mapStateToProps = (state) => {
     }
 }
 export default connect (mapStateToProps,
-    { addNewTodo, toggleCompletedTask }
+    { addNewTodo, toggleCompletedTask, deleteTodo }
     )(TodoContainer);

@@ -7,7 +7,7 @@ function Todo(props) {
             <div className={props.todoItem.completed ? "todo completed" : "todo"}onClick={e => props.toggleCompleted(e, props.index)}>
                 {props.todoItem.value}
             </div>
-            <button className="delete">x</button>
+            <button onClick={e => props.deleteTodo(e, props.index)} className="delete">x</button>
         </div>
     )
 }
