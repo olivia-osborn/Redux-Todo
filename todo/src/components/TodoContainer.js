@@ -15,7 +15,8 @@ class TodoContainer extends React.Component {
 
     addTodo = e => {
         e.preventDefault();
-        this.props.addNewTodo(this.state.newTodo)
+        if (this.state.newTodo) {
+            this.props.addNewTodo(this.state.newTodo)}
     }
 
     toggleCompleted = (e, idx) => {

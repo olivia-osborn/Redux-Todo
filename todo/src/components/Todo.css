@@ -1,0 +1,11 @@
+.todo {
+    font-size: 2rem;
+}
+
+.todo:hover {
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+}
