@@ -1,8 +1,36 @@
 import React from "react";
+import styled from "styled-components";
 import Todo from "./Todo";
 import { connect } from "react-redux";
 
 import { addNewTodo, toggleCompletedTask } from "../actions/index";
+
+const StyledForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: auto;
+`
+
+const StyledInput = styled.input`
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+`
+
+const StyledButton = styled.button `
+    font-size: 1rem;    
+    background: lightblue;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    &:hover {
+        cursor: pointer;
+        background: rgb(112, 202, 231);
+    }
+
+`
 
 class TodoContainer extends React.Component {
     state = {
@@ -37,14 +65,14 @@ class TodoContainer extends React.Component {
                             toggleCompleted={this.toggleCompleted}
                         />
                     })}
-                    <form onSubmit={this.addTodo}>
-                        <input 
+                    <StyledForm onSubmit={this.addTodo}>
+                        <StyledInput
                         type="text" 
                         placeholder="New Todo"
                         onChange={this.handleChanges} 
                         />
-                        <button type="submit">Add Todo</button>
-                    </form>
+                        <StyledButton type="submit">Add Todo</StyledButton>
+                    </StyledForm>
                 </div>
             </>
         )

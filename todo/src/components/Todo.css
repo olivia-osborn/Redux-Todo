@@ -1,11 +1,15 @@
 .todo {
     font-size: 2rem;
+    margin-top: 20px;
+    color: rgb(112, 202, 231);
 }
 
 .todo:hover {
     cursor: pointer;
+    color: rgb(255, 187, 0);
 }
 
 .completed {
     text-decoration: line-through;
+    color: rgb(255, 187, 0);
 }
