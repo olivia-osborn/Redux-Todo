@@ -1,3 +1,9 @@
+.todo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
 .todo {
     font-size: 2rem;
     margin-top: 20px;
@@ -12,4 +18,15 @@
 .completed {
     text-decoration: line-through;
     color: rgb(255, 187, 0);
+}
+
+.delete {
+    font-size: 2rem;
+    background: white;
+    border: white;
+    margin-left: 20px;
+}
+
+.delete:hover {
+    cursor: pointer;
 }

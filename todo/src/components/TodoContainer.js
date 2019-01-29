@@ -8,7 +8,8 @@ import { addNewTodo, toggleCompletedTask } from "../actions/index";
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
-    width: 200px;
+    align-items: center;
+    width: 500px;
     margin: auto;
 `
 
@@ -17,6 +18,8 @@ const StyledInput = styled.input`
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 5px;
+    width: 200px;
+
 `
 
 const StyledButton = styled.button `
@@ -25,6 +28,7 @@ const StyledButton = styled.button `
     border: 1px solid gray;
     border-radius: 5px;
     padding: 5px;
+    width: 200px;
     &:hover {
         cursor: pointer;
         background: rgb(112, 202, 231);
