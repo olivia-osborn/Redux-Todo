@@ -9,12 +9,14 @@ const initialState = {
 
 function reducer(state= initialState, action) {
     switch (action.type) {
-        case ADD_TODO:
-            return {
-                ...state,
-                todoList: [...state.todoList, newTodo]
-            }
+        // case ADD_TODO:
+            // return {
+            //     ...state,
+            //     todoList: [...state.todoList, newTodo]
+            // }
         default:
             return state;
     }
 }
+
+export default reducer;
