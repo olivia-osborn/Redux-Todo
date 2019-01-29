@@ -2,7 +2,7 @@ import React from "react";
 import Todo from "./Todo";
 import { connect } from "react-redux";
 
-import { addNewTodo } from "../actions/index";
+import { addNewTodo, toggleCompletedTask } from "../actions/index";
 
 class TodoContainer extends React.Component {
     state = {
@@ -10,7 +10,6 @@ class TodoContainer extends React.Component {
     }
 
     handleChanges = e => {
-        e.preventDefault();
         this.setState({newTodo: e.target.value})
     }
 
@@ -19,12 +18,22 @@ class TodoContainer extends React.Component {
         this.props.addNewTodo(this.state.newTodo)
     }
 
+    toggleCompleted = (e, idx) => {
+        e.preventDefault();
+        console.log("click!")
+        this.props.toggleCompletedTask(idx)
+    }
+
     render() {
         return (
             <>
                 <div>
                     {this.props.todoList.map((todoItem, index) => {
-                        return <Todo key={index} todoItem={todoItem}/>
+                        return <Todo 
+                            key={index} 
+                            todoItem={todoItem} 
+                            onClick={e => this.toggleCompleted(e, index)}
+                        />
                     })}
                     <form onSubmit={this.addTodo}>
                         <input 
@@ -46,5 +55,5 @@ const mapStateToProps = (state) => {
     }
 }
 export default connect (mapStateToProps,
-    { addNewTodo }
+    { addNewTodo, toggleCompletedTask }
     )(TodoContainer);
